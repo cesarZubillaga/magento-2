@@ -1,14 +1,24 @@
 <?php
-namespace FoggyLine\Office\Model;
+namespace FoggyLine\Office\Model\ResourceModel;
 
-use Magento\Framework\Model\AbstractModel;
+use Magento\Eav\Model\Entity\AbstractEntity;
 
-class Employee extends  AbstractModel
+class Employee extends AbstractEntity
 {
-    const ENTITY = 'foggyline_office_employee';
-
-    public function _construct()
+    /**
+     * The read and write connections m ust be named, else, Magento produces an error using this entities.
+     */
+    protected function _construct()
     {
-        $this->_init('Foggyline\Office\Model\ResourceModel\Employee');
+        $this->_read    = 'foggyline_office_employee_read';
+        $this->_write   = 'foggyline_office_employee_write';
+    }
+
+    public function getEntityType()
+    {
+        if (empty($this->_type)) {
+            $this->setType(\FoggyLine\Office\Model\Employee::ENTITY);
+        }
+        return parent::getEntityType();
     }
 }

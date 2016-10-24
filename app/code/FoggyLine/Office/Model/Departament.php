@@ -1,5 +1,4 @@
 <?php
-
 namespace FoggyLine\Office\Model;
 
 use Magento\Framework\Model\AbstractModel;
