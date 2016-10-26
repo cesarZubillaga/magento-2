@@ -6,7 +6,7 @@ use Magento\Eav\Model\Entity\AbstractEntity;
 class Employee extends AbstractEntity
 {
     /**
-     * The read and write connections m ust be named, else, Magento produces an error using this entities.
+     * The read and write connections must be named, else, Magento produces an error using this entities.
      */
     protected function _construct()
     {
@@ -14,6 +14,9 @@ class Employee extends AbstractEntity
         $this->_write   = 'foggyline_office_employee_write';
     }
 
+    /**
+     * @return \Magento\Eav\Model\Entity\Type
+     */
     public function getEntityType()
     {
         if (empty($this->_type)) {
@@ -21,4 +24,5 @@ class Employee extends AbstractEntity
         }
         return parent::getEntityType();
     }
+
 }

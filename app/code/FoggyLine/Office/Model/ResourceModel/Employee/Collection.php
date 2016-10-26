@@ -1,7 +1,7 @@
 <?php
 namespace FoggyLine\Office\Model\ResourceModel\Employee;
 
-use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
+use Magento\Eav\Model\Entity\Collection\AbstractCollection;
 
 class Collection extends AbstractCollection
 {
